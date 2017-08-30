@@ -14,6 +14,10 @@ class Person
 
   end
 
+  def name
+    @name
+  end
+
   def happiness=(happiness)
     #Sets happiness and min/max
     @happiness = happiness
@@ -71,6 +75,13 @@ class Person
     self.happiness=(@happiness += 2)
     "♪ another one bites the dust ♫"
   end
+
+  def call_friend(person)
+    self.happiness=(@happiness + 3)
+    person.happiness=(person.happiness + 3)
+    "Hi #{person.name}! It's #{self.name}. How are you?"
+  end
+
 
 binding.pry
 end
